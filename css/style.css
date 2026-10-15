@@ -639,29 +639,89 @@ input {
 .card.it-dinari {
   color: #b5830b;
 }
-.card .center.pips .suit-ico {
-  width: 46%;
-  height: 46%;
-  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.12));
+/* talijanske karte: krem papir, raspored znakova, figure */
+.card.it {
+  background: linear-gradient(165deg, #fffdf6 0%, #f5eedc 100%);
+}
+.card.it::before {
+  content: '';
+  position: absolute;
+  inset: 4%;
+  border-radius: calc(var(--w) * 0.08);
+  border: 1px solid rgba(120, 90, 40, 0.18);
+  pointer-events: none;
+}
+.card .center.pips {
+  inset: 12% 23%;
+}
+.card.it .corner {
+  z-index: 2;
+  font-size: 0.86em;
+  padding: 1px 1px 2px;
+  border-radius: 4px;
+  background: #fffaf0;
+}
+.pip {
+  position: absolute;
+  width: calc(var(--w) * 0.25);
+  height: calc(var(--w) * 0.25);
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.15));
+}
+.pips.n2 .pip,
+.pips.n3 .pip {
+  width: calc(var(--w) * 0.31);
+  height: calc(var(--w) * 0.31);
+}
+.pips.n1 .pip {
+  width: calc(var(--w) * 0.64);
+  height: calc(var(--w) * 0.64);
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
+}
+.pip svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 .card .center.fig {
-  flex-direction: column;
-  gap: 6%;
-  inset: 16% 14%;
-  border-radius: calc(var(--w) * 0.08);
-  background: linear-gradient(160deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.08));
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  inset: 12% 15%;
+  border-radius: calc(var(--w) * 0.07);
+  background: linear-gradient(180deg, #fbf1d6, #efdcae);
+  border: 1.5px solid #b98f3c;
+  box-shadow: inset 0 0 0 2px #fff8e4;
+  overflow: hidden;
+  display: block;
 }
-.card .center.fig .suit-ico {
-  width: 46%;
-  height: 34%;
+.fig-art {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: 0;
+  height: 82%;
+}
+.fig-art svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.card .center.fig > .suit-ico {
+  position: absolute;
+  top: 5%;
+  right: 6%;
+  width: 30%;
+  height: 22%;
 }
 .fig-name {
-  font-size: 0.5em;
-  font-weight: 700;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 3%;
+  text-align: center;
+  font-size: 0.4em;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #374055;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
 }
 .card.fr.red {
   color: var(--red);
